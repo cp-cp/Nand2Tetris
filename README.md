@@ -10,6 +10,6 @@ Using HDL language,I had implemented 16 basic gate with the most elementary Nand
 finish in 2023.02.20
 
 ## Week 1
-Using HDL language,I had implemented HalfAdditor\FullAdditor\ALU.
+Using HDL language,I had implemented HalfAdder FullAdder ALU.
 
 finish in 2023.02.22
