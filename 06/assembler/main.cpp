@@ -50,7 +50,7 @@ int main(int argc,char *argv[]){
                 break;
             }
             if(parser.commandType()=='a'){
-                cout<<"a "<<parser.codeLine<<" "<<parser.thisLine()<<endl;
+               // cout<<"a "<<parser.codeLine<<" "<<parser.thisLine()<<endl;
                 std::regex e("^[0-9]*$");
                 symbol=parser.symbol();
                 if(regex_match(symbol,e)){//如果只是数字
@@ -59,6 +59,10 @@ int main(int argc,char *argv[]){
                     if(symbolTable.contains(symbol)){//如果是标识符
                         symbolBin=symbolTable.GetAddress(symbol);
                         fout<<decimalToBinary(std::to_string(symbolBin))<<endl;
+                    }else{//如果是变量
+                        symbolTable.addEntry(symbol,symbolTable.variableNumber);
+                        fout<<decimalToBinary(std::to_string(symbolTable.variableNumber))<<endl;
+                        symbolTable.variableNumber++;
                     }
                 }
             }else if(parser.commandType()=='c'){            
